@@ -39,7 +39,7 @@ function MyCarousel() {
           <Carousel.Caption>
             <h3>Avengers: Infinity War</h3>
             <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur
             </p>
           </Carousel.Caption>
         </Carousel.Item>
