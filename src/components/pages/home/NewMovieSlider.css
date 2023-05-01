@@ -1,0 +1,42 @@
+.d-block-title {
+  margin: 60px 95px 0 95px;
+  margin-bottom: 20px;
+  color: orange;
+  font-size: larger;
+  font-weight: bolder;
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgba(0, 0, 0, 0.667);
+  border-radius: 35px;
+}
+
+.d-block-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 20px 60px 60px 60px;
+}
+
+.d-block-new {
+  width: 150px;
+  height: 260px;
+  margin: 5px;
+}
+
+.d-block-name {
+  font-size: small;
+  padding: 10px;
+  color: rgb(173, 172, 172);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+
+.d-block-img {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/6928/6928706.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+
+.d-block-img img:hover {
+  opacity: 40%;
+}

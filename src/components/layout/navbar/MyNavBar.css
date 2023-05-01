@@ -4,17 +4,30 @@
   box-sizing: border-box;
 }
 
+.nav-container {
+  background-color: rgba(0, 0, 0, 0.849);
+  z-index: 99999;
+}
+
 .small-nav {
   color: rgb(249, 134, 92);
   border-bottom: 1px rgb(249, 134, 92) solid;
-  padding: 10px;
+  padding: 6px;
+  font-size: small;
+  transition-duration: 0.5s;
 }
 
 .small-nav:hover {
-  transition-duration: 0.65s;
+  transition-duration: 0.5s;
   border-radius: 15px 0 15px 0;
   background-color: rgba(255, 204, 176, 0.057);
   border-top: 1px rgb(249, 134, 92) double;
+  padding-bottom: 10px;
+}
+
+.small-nav-genre {
+  color: rgb(249, 134, 92);
+  font-size: small;
 }
 
 .login-button {
@@ -98,4 +111,101 @@
 
 i {
   color: rgb(250, 87, 28);
+}
+
+.hamburger-container {
+  background-color: rgb(250, 87, 28);
+  border-radius: 50px;
+  border: 3px rgb(254, 115, 99) double;
+}
+
+.hamburger {
+  border-radius: 50px;
+  opacity: 70%;
+}
+
+.d-flex {
+  padding: 5px;
+  justify-content: center;
+}
+
+/* Search */
+
+.box,
+.box-active {
+  position: relative;
+}
+
+.input {
+  padding: 10px;
+  width: 35px;
+  height: 35px;
+  background: none;
+  border: 2px solid rgb(254, 115, 99);
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-family: Comic Sans MS;
+  font-size: small;
+  outline: none;
+  transition: 0.5s;
+  cursor: pointer;
+  font-size: small;
+}
+
+.input::placeholder {
+  color: black;
+}
+
+.input-active {
+  outline: none;
+  width: 140px;
+  height: 40px;
+  color: rgba(255, 166, 0, 0.698);
+  border-radius: 5px;
+  border: 1px solid orange;
+  background-color: black;
+  padding: 5px;
+  transition-duration: 0.7s;
+  font-size: small;
+}
+
+.input-active::placeholder {
+  transition-duration: 0.5s;
+  color: rgba(255, 166, 0, 0.698);
+  font-size: small;
+}
+
+.box i {
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  color: rgb(250, 87, 28);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.box-active i {
+  position: absolute;
+  top: 48%;
+  left: 88%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: orange;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.x-style {
+  opacity: 0;
+}
+
+.x-style-active {
+  transition-duration: 0.7s;
+  position: absolute;
+  font-weight: bolder;
+  font-size: large;
+  bottom: 34px;
+  left: 130px;
+  padding: 5px;
 }

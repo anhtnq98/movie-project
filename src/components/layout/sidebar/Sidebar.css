@@ -1,0 +1,112 @@
+hr {
+  color: orange;
+}
+
+/* year ---------------------------------------------- */
+
+.year-big-container {
+  height: 285px;
+  overflow: hidden;
+  background-color: rgb(12, 12, 12);
+}
+
+.year-big-container:hover {
+  overflow-y: scroll;
+}
+
+.year-big-container::-webkit-scrollbar {
+  width: 15px;
+}
+
+.year-big-container::-webkit-scrollbar-track {
+  background-color: black;
+  box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+.year-big-container::-webkit-scrollbar-thumb {
+  background: rgb(254, 99, 42);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.year-big-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(220, 59, 1);
+}
+
+.year-title,
+.ho-title {
+  font-weight: bolder;
+  text-align: left;
+}
+
+.year-title {
+  color: rgb(254, 99, 42);
+}
+
+.year-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.year-block {
+  padding: 10px;
+  margin: 5px;
+  width: 90px;
+  background-color: rgb(27, 27, 27);
+  color: rgb(249, 134, 92);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.year-block:hover {
+  background-color: rgb(79, 79, 79);
+}
+
+/* Hight overall --------------------------------------------------------- */
+.ho-container {
+  margin-bottom: 20px;
+}
+
+.ho-title {
+  color: orange;
+}
+
+.ho-img {
+  margin-top: 10px;
+  margin-bottom: 60px;
+  width: 100%;
+  height: 150px;
+}
+
+.movie-card-container {
+  display: flex;
+  justify-content: flex-start;
+  height: 120px;
+  background-color: rgb(17, 17, 17);
+  border: black 2px solid;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.movie-card-container:hover {
+  background-color: rgb(46, 46, 46);
+}
+
+.ho-movie-name {
+  color: rgb(188, 187, 187);
+  font-weight: bold;
+  padding: 10px 0 0 10px;
+}
+
+.ho-overal {
+  margin-left: 5px;
+  text-align: left;
+  color: yellow;
+}
+
+.ho-year {
+  color: gray;
+}

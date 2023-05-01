@@ -1,0 +1,12 @@
+.scroll-up {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 70%;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.scroll-up:hover {
+  opacity: 100%;
+}
