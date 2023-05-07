@@ -27,7 +27,7 @@ function Years() {
             {listYears.map((years, yearsID) => {
               return (
                 <div key={yearsID}>
-                  <Link className="nav-link active" to={years.href}>
+                  <Link className="nav-link active" to={`/years/${years.id}/#`}>
                     <p className="year-block">{years.year}</p>
                   </Link>
                 </div>

@@ -7,8 +7,22 @@ import "./MyNavBar.css";
 import GenreNavbar from "./GenreNavbar";
 import CountryNavbar from "./CountryNavbar";
 import SearchNavbar from "./SearchNavbar";
+import Slide from "react-reveal/Slide";
 
 function MyNavBar() {
+  let loginFlag = JSON.parse(localStorage.getItem("loginFlag"));
+  let checkLogin = false;
+  if (!loginFlag) {
+    checkLogin = false;
+  } else {
+    checkLogin = true;
+  }
+
+  const handleLogOut = () => {
+    localStorage.removeItem("loginFlag");
+    window.location.href = "/login";
+  };
+
   return (
     <>
       <div className="nav-container">
@@ -16,7 +30,12 @@ function MyNavBar() {
           <Container>
             <Navbar.Brand>
               <Link to="/">
-                <img src="/img/logo4.png" width={"135px"} alt="" />
+                <img
+                  className="logo"
+                  src="/img/logo4.png"
+                  width={"135px"}
+                  alt=""
+                />
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -40,44 +59,109 @@ function MyNavBar() {
                     </span>
                   </Link>
                 </li>
-                {/*---------- Phim Lẻ ------- */}
-                <li className="nav-item">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/movies"
-                  >
-                    <span className="small-nav">
-                      <i className="fa-sharp fa-solid fa-film"></i> Phim Lẻ
-                    </span>
-                  </Link>
-                </li>
-                {/*---------- Phim Bộ ------- */}
-                <li className="nav-item">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/tv-series"
-                  >
-                    <span className="small-nav">
-                      <i className="fa-solid fa-tv"></i> Phim Bộ
-                    </span>
-                  </Link>
-                </li>
-                {/* ------------ Thể loại --------- */}
-                <GenreNavbar />
-                {/* ------------ Quốc gia --------- */}
-                <CountryNavbar />
-                <SearchNavbar />
+                {loginFlag !== null && loginFlag.condition === "admin" ? (
+                  <>
+                    <li className="nav-item">
+                      <Link
+                        className="nav-link active"
+                        aria-current="page"
+                        to="/adminsdjsodkjgsdoigjsdi3454sdgrgr"
+                      >
+                        <span className="small-nav">
+                          <i className="fa-sharp fa-solid fa-screwdriver-wrench"></i>{" "}
+                          Quản Lý Admin
+                        </span>
+                      </Link>
+                      {/* <SearchNavbar /> */}
+                    </li>
+                    <SearchNavbar />
+                  </>
+                ) : (
+                  <>
+                    {/*---------- Phim Lẻ ------- */}
+                    <li className="nav-item">
+                      <Link
+                        className="nav-link active"
+                        aria-current="page"
+                        to="/movies"
+                      >
+                        <span className="small-nav">
+                          <i className="fa-sharp fa-solid fa-film"></i> Phim Lẻ
+                        </span>
+                      </Link>
+                    </li>
+                    {/*---------- Phim Bộ ------- */}
+                    <li className="nav-item">
+                      <Link
+                        className="nav-link active"
+                        aria-current="page"
+                        to="/tv-series"
+                      >
+                        <span className="small-nav">
+                          <i className="fa-solid fa-tv"></i> Phim Bộ
+                        </span>
+                      </Link>
+                    </li>
+                    {/* ------------ Thể loại --------- */}
+                    <GenreNavbar />
+                    {/* ------------ Quốc gia --------- */}
+                    <CountryNavbar />
+
+                    <SearchNavbar />
+                  </>
+                )}
               </Nav>
               {/* -------- Đăng nhập --------- */}
               <div className="d-flex">
-                <Link to="/login">
-                  <button className="button-57">
-                    <span className="text">Đăng nhập</span>
-                    <span>Login Here</span>
-                  </button>
-                </Link>
+                {checkLogin === false ? (
+                  <>
+                    <Slide top cascade>
+                      <Link to="/login">
+                        <button className="button-57">
+                          <span className="text">Đăng nhập</span>
+                          <span>Login Here</span>
+                        </button>
+                      </Link>
+                    </Slide>
+                  </>
+                ) : (
+                  <>
+                    <Slide top cascade>
+                      <div className="logout-button">
+                        <Slide top cascade>
+                          <div className="logout-button-user">
+                            {loginFlag !== null &&
+                            loginFlag.condition === "admin" ? (
+                              <>
+                                <div>
+                                  <Slide top cascade>
+                                    <i className="fa-sharp fa-solid fa-star"></i>
+                                    Mừng bạn trở lại, {loginFlag.userName}
+                                  </Slide>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div
+                                  title={`Tài khoản: ${loginFlag.userName} (Nhấn để xem chi tiết)`}
+                                  className="user-avatar"
+                                >
+                                  {loginFlag.avatarChar}
+                                </div>
+                              </>
+                            )}
+                          </div>
+                        </Slide>
+                        <button onClick={handleLogOut} className="button-57">
+                          <span className="text">
+                            <i className="fa-sharp fa-solid fa-right-from-bracket"></i>
+                          </span>
+                          <span>Đăng xuất</span>
+                        </button>
+                      </div>
+                    </Slide>
+                  </>
+                )}
               </div>
             </Navbar.Collapse>
           </Container>

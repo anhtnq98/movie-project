@@ -83,6 +83,7 @@ hr {
 
 .movie-card-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   height: 120px;
   background-color: rgb(17, 17, 17);

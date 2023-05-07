@@ -32,7 +32,7 @@ function CountryNavbar() {
                   <Link
                     className="nav-link active"
                     aria-current="page"
-                    to={countries.href}
+                    to={`/countries/${countries.id}`}
                   >
                     <span className="small-nav-genre">{countries.name}</span>
                   </Link>

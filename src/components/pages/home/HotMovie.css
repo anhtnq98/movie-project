@@ -1,4 +1,5 @@
-.hot-title {
+.hot-title,
+.genre-detail-title {
   margin: 60px 95px 0 95px;
   margin-bottom: 20px;
   color: orange;
@@ -17,10 +18,10 @@
 }
 
 .movie-card {
-  border-radius: 5px;
+  border-radius: 15px;
   width: 160px;
-  height: 340px;
-  margin: 5px;
+  height: 365px;
+  margin: 20px 5px 5px 5px;
   box-shadow: 0px 4px 16px 5px rgba(255, 255, 255, 0.4);
   background-image: url("../../../../public/img/play.png");
   background-color: rgba(0, 0, 0, 0.855);
@@ -41,17 +42,24 @@
 }
 
 .movie-card p {
-  line-height: 2px;
+  line-height: 15px;
   margin-left: 5px;
+  margin-right: 5px;
 }
 
-.movie-card-title {
+.movie-card-title,
+.movie-card-title-year {
   font-size: 15px;
   margin-top: 12px;
   color: rgba(255, 255, 255, 0.857);
-  font-weight: bold;
   text-align: left;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  font-weight: bold;
+}
+
+.movie-card-title-year {
+  margin-top: 5px;
 }
 
 .movie-card-year {
@@ -69,4 +77,11 @@
 .movie-card-detail .detail {
   font-size: large;
   margin-left: 10px;
+}
+
+.genre-detail-title {
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgba(0, 0, 0, 0.086);
+  font-size: 45px;
+  margin-top: 0;
 }

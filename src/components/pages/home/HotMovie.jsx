@@ -38,7 +38,7 @@ function HotMovie() {
                     src={data.poster}
                     alt=""
                     width={"160px"}
-                    height={"245px"}
+                    height={"225px"}
                   />
                 </div>
               </Link>

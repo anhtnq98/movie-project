@@ -16,12 +16,14 @@ function Register() {
     loadData();
   }, []);
 
+  var uniq = new Date().getTime();
   const initialState = {
+    id: uniq,
     userName: "",
     email: "",
     password: "",
     condition: "user",
-    status: "active",
+    status: "Hoạt Động",
   };
   const [inputValue, setInputValue] = useState(initialState);
   const [confirmPassword, setConfirmPassword] = useState("");

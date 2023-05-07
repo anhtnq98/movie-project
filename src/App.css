@@ -8,3 +8,9 @@
   text-align: center;
   background-color: black;
 }
+.error {
+  font-size: xx-large;
+  padding: 100px;
+  color: orangered;
+  font-family: "Courier New", Courier, monospace;
+}

@@ -33,7 +33,7 @@ function GenreNavbar() {
                   <Link
                     className="nav-link active"
                     aria-current="page"
-                    to={genre.href}
+                    to={`/genres/${genre.id}/#`}
                   >
                     <span className="small-nav-genre">
                       <i className={genre.icon}></i> {genre.name}

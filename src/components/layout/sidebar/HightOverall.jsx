@@ -30,7 +30,11 @@ function HightOverall() {
           Phim Bộ Được Đánh Giá Cao
         </p>
         <div className="ho-img">
-          <img src="./img/ho.jpg" width={"100%"} alt="" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/fir-upload-img-ft02.appspot.com/o/side-bar%2Fho.jpg?alt=media&token=f8e04e3f-fe6a-4d56-a2cd-80a6c37777d3"
+            width={"100%"}
+            alt=""
+          />
         </div>
         {hightOverall.slice(0, 10).map((data, id) => (
           <div key={id}>

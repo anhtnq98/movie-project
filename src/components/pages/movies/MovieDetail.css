@@ -162,17 +162,23 @@
 
 .comment-button p {
   background-color: rgba(252, 81, 19, 0.74);
-  color: rgba(240, 248, 255, 0.83);
+  color: rgba(240, 248, 255, 0.856);
   width: 215px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 15px 0px 0px 15px;
-  transition-duration: 0.7s;
+  transition-duration: 0.5s;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: large;
 }
 
 .comment-button p:hover {
-  background-color: rgba(252, 81, 19, 0.922);
-  transition-duration: 0.7s;
+  transition-duration: 0.5s;
   transform: translateX(-20px);
+}
+
+.comment-button p:active {
+  background-color: black;
 }
 
 .list-comment {
@@ -208,6 +214,30 @@
   width: 600px;
   height: 125px;
   color: rgba(240, 248, 255, 0.814);
+}
+
+.like-dislike span {
+  padding: 5px;
+}
+
+.like i,
+.dislike i {
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.like i:hover,
+.dislike i:hover {
+  transition-duration: 0.3s;
+  transform: rotate(-45deg);
+}
+
+.like i:active,
+.dislike i:active {
+  background-color: rgba(255, 166, 0, 0.198);
+  transition-duration: 0.3s;
+  transform: scale(120%);
+  border-radius: 100%;
 }
 
 @media only screen and (max-width: 768px) {

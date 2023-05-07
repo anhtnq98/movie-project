@@ -29,17 +29,26 @@ function Login() {
 
     if (getUser) {
       for (let i = 0; i < data.length; i++) {
-        if (data[i].userName == nameOrEmail || data[i].email == nameOrEmail) {
-          if (data[i].status === "Bị khóa") {
+        if (data[i].userName === nameOrEmail || data[i].email === nameOrEmail) {
+          if (data[i].status === "Bị Khóa") {
             alert("Tài khoản của bạn đã bị khóa");
             return;
           }
+          const avatarChar = data[i].userName.charAt(0);
           let user = {
             userName: data[i].userName,
             email: data[i].email,
+            condition: data[i].condition,
+            avatarChar: avatarChar,
           };
           localStorage.setItem("loginFlag", JSON.stringify(user));
           alert("Đăng nhập thành công");
+          if (data[i].condition === "admin") {
+            setTimeout(() => {
+              window.location.href = "/adminsdjsodkjgsdoigjsdi3454sdgrgr";
+            }, 2000);
+            return;
+          }
           setTimeout(() => {
             window.location.href = "/";
           }, 2000);

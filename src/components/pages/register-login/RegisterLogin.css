@@ -47,10 +47,32 @@
   display: flex;
 }
 
+.form-group-option {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
 .form-group i {
   color: orangered;
   padding-top: 5px;
   padding-right: 10px;
+}
+
+.form-group-option i {
+  color: orangered;
+  padding-top: 7px;
+  padding-right: 10px;
+}
+
+.form-group-option-inside {
+  display: flex;
+}
+
+.form-group-option-inside p {
+  font-weight: normal !important;
+  font-size: small;
+  margin-right: 25px;
 }
 
 .form-input {
@@ -105,6 +127,77 @@
   color: rgb(255, 68, 0);
 }
 
+.select {
+  background-color: rgba(0, 0, 0, 0.723);
+  color: rgb(255, 120, 71);
+  font-size: small;
+  border-radius: 25px;
+  border: solid 1px rgb(255, 96, 39);
+  padding: 5px 15px 5px 15px;
+  text-align: center;
+  outline: none;
+}
+
+.select option {
+  text-align: left;
+  background-color: black;
+}
+
+.form-text-area {
+  border: solid 1px rgb(255, 96, 39);
+  border-radius: 25px;
+  background: transparent;
+  outline: none;
+  flex-grow: 1;
+  color: rgb(255, 120, 71);
+  padding: 15px 10px 5px 10px;
+  font-size: small;
+}
+
+.form-text-area::placeholder {
+  text-align: center;
+  color: rgb(255, 120, 71);
+  font-size: small;
+}
+
+.input-img {
+  font-size: small;
+  color: rgb(255, 120, 71);
+}
+
+.playerProfilePic_home_tile {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid rgb(255, 120, 71);
+  border-radius: 15px;
+  width: 105px;
+  height: 150px;
+}
+
+.playerProfileVideo_home_tile {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid rgb(255, 120, 71);
+  border-radius: 15px;
+  width: 250px;
+  height: 135px;
+}
+
+.input-img-button {
+  border-radius: 25px;
+  background-color: transparent;
+  color: aliceblue;
+  padding: 5px;
+  color: rgb(255, 120, 71);
+  border: solid 1px rgb(255, 96, 39);
+  font-size: small;
+  font-weight: bold;
+}
+
+.input-img-button:hover {
+  background-color: rgba(255, 97, 39, 0.152);
+}
+
 #wrapper p {
   font-size: small;
   text-align: center;
@@ -132,10 +225,14 @@
   z-index: 1;
   right: 25px;
   bottom: 35px;
-  padding: 15px;
+  padding: 20px 15px 15px 15px;
   color: rgb(255, 120, 71);
   font-size: 15px;
-  font-weight: 450;
+}
+
+#snack-bar p {
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
 }
 
 #snack-bar.show {

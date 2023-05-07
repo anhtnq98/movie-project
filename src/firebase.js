@@ -1,21 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getStorage } from "firebase/storage";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDXAQX8Kz6rf7jq_1vQRdHfwf_ByKrxves",
-  authDomain: "movies-website-b4f83.firebaseapp.com",
-  projectId: "movies-website-b4f83",
-  storageBucket: "movies-website-b4f83.appspot.com",
-  messagingSenderId: "530655975716",
-  appId: "1:530655975716:web:d8a8c93d4cc217761efbb1",
-  measurementId: "G-CDD66JPRDT",
+  apiKey: "AIzaSyAF9JQecucbpCFNlIYtgkV24C5rd2x3mjQ",
+  authDomain: "fir-upload-img-ft02.firebaseapp.com",
+  projectId: "fir-upload-img-ft02",
+  storageBucket: "fir-upload-img-ft02.appspot.com",
+  messagingSenderId: "763882008421",
+  appId: "1:763882008421:web:079d636d56a6f910d3fb8c",
+  measurementId: "G-L4YSE3QGCD"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export const storage = getStorage(app);

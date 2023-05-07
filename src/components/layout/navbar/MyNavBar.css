@@ -9,6 +9,15 @@
   z-index: 99999;
 }
 
+.logo {
+  transition-duration: 0.75s;
+}
+
+.logo:hover {
+  transition-duration: 0.75s;
+  transform: rotate(-25deg);
+}
+
 .small-nav {
   color: rgb(249, 134, 92);
   border-bottom: 1px rgb(249, 134, 92) solid;
@@ -109,6 +118,38 @@
   transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
 }
 
+.logout-button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logout-button-user {
+  color: rgba(254, 143, 102, 0.794);
+  padding: 5px 15px 5px 5px;
+  font-style: italic;
+  font-size: small;
+}
+
+.user-avatar {
+  padding: 15px;
+  font-size: xx-large;
+  font-family: Brush Script MT;
+  color: rgb(255, 115, 0);
+  background-image: url(../../../../public/img/avatar1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition-duration: 0.75s;
+  cursor: pointer;
+}
+
+.user-avatar:hover {
+  transition-duration: 0.75s;
+  padding: 5px 25px 25px 5px;
+  background-image: url(../../../../public/img/avatar2.gif);
+}
+
 i {
   color: rgb(250, 87, 28);
 }
@@ -156,6 +197,14 @@ i {
   color: black;
 }
 
+.box:hover .input {
+  border: 2px solid orange;
+}
+
+.box:hover i {
+  color: orange;
+}
+
 .input-active {
   outline: none;
   width: 140px;
@@ -178,6 +227,7 @@ i {
 .box i {
   position: absolute;
   top: 45%;
+  left: 17.5px;
   transform: translate(-50%, -50%);
   font-size: 15px;
   color: rgb(250, 87, 28);
