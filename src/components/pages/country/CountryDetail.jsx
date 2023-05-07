@@ -69,7 +69,11 @@ function CountryDetail() {
                         <p className="movie-card-title-year">{data.title}</p>
                         <p className="movie-card-year">{data.year}</p>{" "}
                         <p className="movie-card-rating">
-                          <img src="./img/star.gif" width={"18px"} alt="" />{" "}
+                          <img
+                            src="https://firebasestorage.googleapis.com/v0/b/fir-upload-img-ft02.appspot.com/o/for-all%2Fstar.gif?alt=media&token=fbc577c0-4163-4a5a-af32-c1f1b35ad417"
+                            width={"18px"}
+                            alt=""
+                          />{" "}
                           {data.voteAverage}
                           <span className="detail">
                             <i className="fa-solid fa-circle-info"></i>
@@ -105,7 +109,11 @@ function CountryDetail() {
                       <p className="movie-card-title-year">{data.title}</p>
                       <p className="movie-card-year">{data.year}</p>{" "}
                       <p className="movie-card-rating">
-                        <img src="./img/star.gif" width={"18px"} alt="" />{" "}
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/fir-upload-img-ft02.appspot.com/o/for-all%2Fstar.gif?alt=media&token=fbc577c0-4163-4a5a-af32-c1f1b35ad417"
+                          width={"18px"}
+                          alt=""
+                        />{" "}
                         {data.voteAverage}
                         <span className="detail">
                           <i className="fa-solid fa-circle-info"></i>

@@ -58,14 +58,16 @@ function NewMovieSlider() {
                   key={listHotID}
                   title={listHot.title}
                 >
-                  <div className="d-block-img">
-                    <img
-                      src={listHot.poster}
-                      width={"150px"}
-                      height={"210px"}
-                      alt=""
-                    />
-                  </div>
+                  <Link to={`/movies/${listHot.id}/#`}>
+                    <div className="d-block-img">
+                      <img
+                        src={listHot.poster}
+                        width={"150px"}
+                        height={"210px"}
+                        alt=""
+                      />
+                    </div>
+                  </Link>
                   <div className="d-block-name">{listHot.title}</div>
                 </div>
               ))}
@@ -79,14 +81,16 @@ function NewMovieSlider() {
                   key={listHotID}
                   title={listHot.title}
                 >
-                  <div className="d-block-img">
-                    <img
-                      src={listHot.poster}
-                      width={"150px"}
-                      height={"210px"}
-                      alt=""
-                    />
-                  </div>
+                  <Link to={`/movies/${listHot.id}/#`}>
+                    <div className="d-block-img">
+                      <img
+                        src={listHot.poster}
+                        width={"150px"}
+                        height={"210px"}
+                        alt=""
+                      />
+                    </div>
+                  </Link>
                   <div className="d-block-name">{listHot.title}</div>
                 </div>
               ))}

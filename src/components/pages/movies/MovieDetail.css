@@ -145,13 +145,6 @@
   padding: 20px;
 }
 
-.comment-avatar {
-  margin: 5px;
-  padding: 5px;
-  background-color: rgb(254, 99, 42);
-  border-radius: 50%;
-}
-
 .comment-button {
   display: flex;
   justify-content: center;
@@ -161,13 +154,13 @@
 }
 
 .comment-button p {
-  background-color: rgba(252, 81, 19, 0.74);
+  background-color: rgba(198, 129, 1, 0.44);
   color: rgba(240, 248, 255, 0.856);
   width: 215px;
   padding: 10px;
   border-radius: 15px 0px 0px 15px;
   transition-duration: 0.5s;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   font-size: large;
 }
@@ -178,7 +171,7 @@
 }
 
 .comment-button p:active {
-  background-color: black;
+  background-color: rgb(255, 174, 23);
 }
 
 .list-comment {
@@ -191,12 +184,6 @@
   border-radius: 15px;
 }
 
-.comment-avatars {
-  padding: 10px;
-  background-color: rgb(254, 99, 42);
-  border-radius: 50%;
-}
-
 .comment-text-first {
   display: flex;
   justify-content: space-between;
@@ -204,8 +191,8 @@
 
 .comment-user {
   font-weight: bold;
-  font-size: large;
-  font-family: "Courier New", Courier, monospace;
+  font-size: larger;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .comment-text {
@@ -222,25 +209,53 @@
 
 .like i,
 .dislike i {
-  transition-duration: 0.5s;
   cursor: pointer;
+  font-size: 25px;
+  color: orange;
 }
 
 .like i:hover,
 .dislike i:hover {
-  transition-duration: 0.3s;
-  transform: rotate(-45deg);
+  background-color: rgba(255, 255, 255, 0.198);
+  border-radius: 100%;
 }
 
 .like i:active,
 .dislike i:active {
-  background-color: rgba(255, 166, 0, 0.198);
-  transition-duration: 0.3s;
+  background-color: rgba(255, 255, 255, 0.198);
   transform: scale(120%);
   border-radius: 100%;
 }
 
+.star {
+  display: inline-block;  
+  cursor: pointer;
+}
+
+.inactive, .active {
+  background: transparent;
+  user-select: none;
+}
+
+.inactive {
+  color: #f1f1e8;
+}
+
+.active {
+  color: red;
+}
+
+
 @media only screen and (max-width: 768px) {
+  .comment-container textarea {
+    padding: 5px;
+  }
+
+  .user-avatar {
+    width: 50px !important;
+    font-size: 25px !important;
+  }
+
   .mv-detail-container {
     flex-wrap: wrap;
   }
@@ -270,5 +285,10 @@
 
   .comment-user {
     font-size: x-small;
+  }
+
+  .like i,
+  .dislike i {
+    font-size: 15px;
   }
 }

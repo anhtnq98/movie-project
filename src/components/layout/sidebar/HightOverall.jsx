@@ -31,7 +31,7 @@ function HightOverall() {
         </p>
         <div className="ho-img">
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/fir-upload-img-ft02.appspot.com/o/side-bar%2Fho.jpg?alt=media&token=f8e04e3f-fe6a-4d56-a2cd-80a6c37777d3"
+            src="https://firebasestorage.googleapis.com/v0/b/fir-upload-img-ft02.appspot.com/o/side-bar%2Fho.webp?alt=media&token=59001cf9-eea3-4ae9-b17d-547f6d2b3132"
             width={"100%"}
             alt=""
           />

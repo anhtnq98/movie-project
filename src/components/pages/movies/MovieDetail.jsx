@@ -17,7 +17,6 @@ function MovieDetail() {
   // Nhận dữ liệu từ trang trước
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
-  let movieTitle = movie.title;
 
   useEffect(() => {
     const loadMovie = async () => {
@@ -28,7 +27,46 @@ function MovieDetail() {
   }, [id]);
 
   // Khởi tạo giá trị comment
-  var uniq = new Date().getTime();
+  var today = new Date();
+  var uniq = today.getTime();
+
+  // Lấy ngày tháng hiển thị
+  var currentTime =
+    today.getFullYear() +
+    "/" +
+    (today.getMonth() + 1) +
+    "/" +
+    today.getDate() +
+    " " +
+    today.getHours() +
+    ":" +
+    (today.getMinutes() < 10
+      ? "0" + today.getMinutes().toString()
+      : today.getMinutes());
+
+  // lấy ngày để hiện theo list
+  var date =
+    today.getFullYear() +
+    "" +
+    (today.getMonth() < 10
+      ? "0" + (today.getMonth() + 1).toString()
+      : today.getMonth() + 1) +
+    "" +
+    (today.getDate() < 10 ? "0" + today.getDate().toString() : today.getDate());
+  var time =
+    (today.getHours() < 10
+      ? "0" + today.getHours().toString()
+      : today.getHours()) +
+    "" +
+    (today.getMinutes() < 10
+      ? "0" + today.getMinutes().toString()
+      : today.getMinutes()) +
+    "" +
+    (today.getSeconds() < 10
+      ? "0" + today.getSeconds().toString()
+      : today.getSeconds());
+  var dateTime = Number(date + time);
+
   const initialState = {
     id: uniq,
     movieID: id,
@@ -36,15 +74,30 @@ function MovieDetail() {
     charName: loginFlag?.avatarChar,
     condition: "user",
     comment: "",
-    like: "",
-    dislike: "",
-    quantity: 0,
+    like: 0,
+    dislike: 0,
+    dateTime: dateTime,
+    currentTime: currentTime,
   };
   const [comment, setComment] = useState(initialState);
+  const [listComment, setListComment] = useState([]);
+  const currentComments = listComment.filter((e) => e.movieID === id);
+  currentComments.sort((a, b) =>
+    a.dateTime === b.dateTime ? 0 : a.dateTime > b.dateTime ? -1 : 1
+  );
+
+  const loadComment = async () => {
+    const result = await axios.get("http://localhost:5000/comments");
+    setListComment(result.data);
+  };
+
+  useEffect(() => {
+    loadComment();
+  }, []);
 
   // comment khi chưa đăng nhập
   const handleCanNotComment = () => {
-    alert("Đăng nhập để comment");
+    alert("Mời đăng nhập để bình luận");
   };
 
   // lấy giá trị input comment
@@ -56,15 +109,30 @@ function MovieDetail() {
     }));
   };
 
-  const handleCommentButton = (e) => {
+  const handleCommentButton = async (e) => {
     e.preventDefault();
     if (!comment.comment) {
       return;
     }
     setComment(comment);
-    axios.post("http://localhost:5000/comments", comment);
+    await axios.post("http://localhost:5000/comments", comment);
     setComment(initialState);
     console.log(comment);
+    loadComment();
+  };
+
+  const handleLike = async (id, index) => {
+    await axios.patch(`http://localhost:5000/comments/${id}`, {
+      like: currentComments[index].like + 1,
+    });
+    loadComment();
+  };
+
+  const handleDislike = async (id, index) => {
+    await axios.patch(`http://localhost:5000/comments/${id}`, {
+      dislike: currentComments[index].dislike + 1,
+    });
+    loadComment();
   };
 
   return (
@@ -116,6 +184,9 @@ function MovieDetail() {
           </div>
         </Fade>
 
+
+
+
         <div className="trailer-container">
           <Fade top>
             <p className="trailer-title">{movie.title} Trailer</p>
@@ -159,7 +230,6 @@ function MovieDetail() {
               <div className="comment-input-container">
                 <div
                   style={{ width: "95px", fontSize: "55px" }}
-                  title={`Tài khoản: ${loginFlag.userName} (Nhấn để xem chi tiết)`}
                   className="user-avatar"
                 >
                   {loginFlag.avatarChar}
@@ -171,7 +241,7 @@ function MovieDetail() {
                   value={comment.comment}
                   id=""
                   cols="70"
-                  rows="3"
+                  rows="2"
                 ></textarea>
               </div>
               <div onClick={handleCommentButton} className="comment-button">
@@ -180,35 +250,40 @@ function MovieDetail() {
             </>
           )}
 
-          <div className="list-comment">
-            <div className="comment-avatars">
-              <img src="/img/avatar1.jpg" width={"75px"} alt="" />
-            </div>
-            <div className="comment-text">
-              <div className="comment-text-first">
-                <p className="comment-user">Tên</p>
-                <div className="like-dislike">
-                  <span className="like">
-                    <i
-                      style={{ fontSize: "30px" }}
-                      className="fa-solid fa-thumbs-up"
-                    ></i>
-                  </span>{" "}
-                  <span className="dislike">
-                    <i
-                      style={{ fontSize: "30px" }}
-                      className="fa-solid fa-thumbs-down"
-                    ></i>
-                  </span>{" "}
-                </div>
+          {currentComments.map((comment, index) => (
+            <div key={index} className="list-comment">
+              <div
+                style={{ width: "95px", fontSize: "55px" }}
+                className="user-avatar"
+              >
+                {comment.charName}
               </div>
-              <p>
-                grehehethtsdffffffffffffffffffffffffffffffdfgdfhdf hdfhdfhdh
-                dhdghd hdghg hgdh dghdhdh
-                gfffffffffffffffffffffffffffffffffffffff
-              </p>
+              <div className="comment-text">
+                <div className="comment-text-first">
+                  <p className="comment-user">
+                    {comment.userName} ( {comment.currentTime} )
+                  </p>
+                  <div className="like-dislike">
+                    <span
+                      onClick={(e) => handleLike(comment.id, index)}
+                      className="like"
+                    >
+                      <i className="fa-solid fa-thumbs-up"></i>{" "}
+                      <span>{comment.like}</span>
+                    </span>{" "}
+                    <span
+                      onClick={(e) => handleDislike(comment.id, index)}
+                      className="dislike"
+                    >
+                      <i className="fa-solid fa-thumbs-down"></i>{" "}
+                      <span>{comment.dislike}</span>
+                    </span>{" "}
+                  </div>
+                </div>
+                <p>{comment.comment}</p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
         <div>Có thể bạn cũng muốn xem</div>

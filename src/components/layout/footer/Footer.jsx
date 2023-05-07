@@ -8,7 +8,11 @@ function Footer() {
       <footer className="footer-distributed">
         <div className="footer-left">
           <div>
-            <img src="./img/logo4.png" width={"300px"} alt="" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/fir-upload-img-ft02.appspot.com/o/side-bar%2Flogo4.png?alt=media&token=37b5ae04-cf29-484b-8aea-cf3ab8cbf47e"
+              width={"250px"}
+              alt=""
+            />
           </div>
           <p className="footer-company-name">Anie Movie © Copyright 2023</p>
         </div>
@@ -29,31 +33,26 @@ function Footer() {
                 <p className="footer-center-center">Phim Tình Cảm</p>
               </div>
             </Link>
-            <Link className="nav-link active">
-              <div>
-                <p className="footer-center-center">Phim Tình Cảm</p>
-              </div>
-            </Link>
-            <Link className="nav-link active">
-              <div>
-                <p className="footer-center-center">Phim Tình Cảm</p>
-              </div>
-            </Link>
           </div>
           <div className="part-two">
             <Link className="nav-link active">
               <div>
-                <p className="footer-center-head">Phim Bộ</p>
+                <p className="footer-center-head">Phim Lẻ</p>
               </div>
             </Link>
             <Link className="nav-link active">
               <div>
-                <p className="footer-center-center">Phim Hành Động</p>
+                <p className="footer-center-center">Phim Tâm Lý - Trinh Thám</p>
               </div>
             </Link>
             <Link className="nav-link active">
               <div>
-                <p className="footer-center-center">Phim Tình Cảm</p>
+                <p className="footer-center-center">Phim Khoa Học Viễn Tưởng</p>
+              </div>
+            </Link>
+            <Link className="nav-link active">
+              <div>
+                <p className="footer-center-center">Phim Kinh Dị</p>
               </div>
             </Link>
           </div>
@@ -61,8 +60,7 @@ function Footer() {
         <div className="footer-right">
           <p className="footer-company-about">
             <span>Về chúng tôi</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce
-            euismod convallis velit, eu auctor lacus vehicula sit amet.
+            Cập nhật phim hằng ngày, giúp người xem có trải nghiệm tốt nhất
           </p>
           <div className="footer-icons">
             <Link className="nav-link active">

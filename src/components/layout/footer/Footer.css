@@ -70,6 +70,7 @@
   margin: 0;
 }
 
+
 .footer-distributed .footer-company-about span {
   display: block;
   color: #ffffff;
@@ -97,6 +98,10 @@
   line-height: 35px;
   margin-right: 3px;
   margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons p:hover {
+  background-color: #9c9c9c78;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
